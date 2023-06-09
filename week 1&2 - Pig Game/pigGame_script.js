@@ -14,21 +14,13 @@ const resetButton = document.querySelector(".btn--new");
 const player0Element = document.querySelector(".player--0")
 const player1Element = document.querySelector(".player--1")
 
-// Initialize the condition of the game 
-// score0Element.textContent = 0;
-// score1Element.textContent = 0;
-// diceElement.classList.add("hidden");
-
 // Create variable to hold the current score and active player 
 // Create a variable to hold the condition of the game 
 // Create an empty array to store the total score of each player 
 
 let currentScore, currentPlayer, gamePlay, totalScore;
 
-// let gamePlay = true;
-
-// let totalScore = [0,0];
-
+// Switch the player 
 function playerSwitch(){
     if (currentPlayer === 0){
         currentPlayer = 1;
@@ -97,14 +89,6 @@ function holdClick(){
             // Play the audio when the player wins 
             audioElement.play();
 
-        // // Add the 'more' class to trigger the animation
-        // playerElement.classList.add('roll');
-
-        // // Remove the 'more' class after the animation completes
-        // setTimeout(() => {
-        //     playerElement.classList.remove('more');
-        // }, 500);
-
             [player0Element, player1Element].forEach(playerElement => {
                 // Add the 'more' class to trigger the animation
                 playerElement.classList.add('more');
@@ -115,7 +99,9 @@ function holdClick(){
                 }, 500);
             });
 
+            // Set the game condition to false to end the game 
             gamePlay = false;
+
             diceElement.classList.add("hidden");
         }
             else{
@@ -136,6 +122,7 @@ function newGame(){
     currentScore = 0;
     totalScore =[0,0];
 
+    // Hide the dice image
     diceElement.classList.add("hidden");
 
     // Reset player 1 to be the active player 
