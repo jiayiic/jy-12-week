@@ -58,7 +58,6 @@ let handleClick = () => {
             document.querySelector(`#current--${currentPlayer}`).textContent = 0;
             currentScore = 0;
             playerSwitch();
-        
         }
         // Add the 'roll' class to trigger the animation
         diceElement.classList.add('roll');
